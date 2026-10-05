@@ -33,10 +33,10 @@ namespace copymoveforgery
 			        Color c = img.GetPixel(j,i);
 			        foto.setPixelInput(Color.FromArgb(0,c.R,c.G,c.B).ToArgb(),j,i);
 
-                    String strpxl = c.R.ToString() + "," + c.G.ToString() + "," + c.B.ToString();
-                    System.Diagnostics.Trace.Write(strpxl + "\t");
+                 //   String strpxl = c.R.ToString() + "," + c.G.ToString() + "," + c.B.ToString();
+                 //   System.Diagnostics.Trace.Write(strpxl + "\t");
 	             }
-                 System.Diagnostics.Trace.WriteLine("");
+                // System.Diagnostics.Trace.WriteLine("");
 	        }
 
         }

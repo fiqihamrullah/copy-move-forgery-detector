@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace copymoveforgery
 {
     class BlockMatching
-    {
-        	
+    {        	
 	        private DigitalPhoto[] block;
 	        private double[,] matrik;
 	        private Point[] position;
@@ -51,9 +51,9 @@ namespace copymoveforgery
              
 
             
-	        public void lexicography_sort()
-            {
-                double[] temp = new double[4]; //jumlah colomn
+	        public void lexicography_sort(int koefBlock)
+            {					
+				double[] temp = new double[koefBlock]; //jumlah colomn
                 Point temp_position;
 	            for(int i=0; i<block.GetLength(0)-1; i++)
 	            {	
@@ -63,7 +63,7 @@ namespace copymoveforgery
 			            if (compare(i,j)==1)    //jika i lebih besar dari j
 			            {
                    
-				            for(int k=0; k<4;k++)
+				            for(int k=0; k< koefBlock; k++)
 				            {  //memasukkan data colomn
 					            temp[k] = matrik[i,k];
 					            matrik[i,k] = matrik[j,k];
@@ -100,13 +100,13 @@ namespace copymoveforgery
 	                 for(int j=i+1; j<position.GetLength(0);j++)
 	                 {
 		                 if(Math.Abs (i-j) < Nn )
-		                 {
-	      	                Pair pr = new Pair();
+		                 {	      	               
 			                if (compare(i,j)==0) //2 blok dianggap mirip/ sama semua nilai vektor
 			                {
-		                       pr.set_point1(position[i]);
-		                       pr.set_point2(position[j]);
-                               lstpair.Add(pr);
+								Pair pr = new Pair();
+								pr.set_point1(position[i]);
+								pr.set_point2(position[j]);
+								lstpair.Add(pr);
 			                }
 
 		                 }

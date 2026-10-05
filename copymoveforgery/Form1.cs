@@ -51,7 +51,7 @@ namespace copymoveforgery
              //   MessageBox.Show("----Mulai--------");
              System.Diagnostics.Trace.WriteLine("Ubah ke Dalam Blok .....");
              int idx = iselected;
-             int iblock = 0;
+             int iblock = 0; //koef block 
              if (idx == 0)
              {
                  foto.blockConversion(16);
@@ -77,7 +77,7 @@ namespace copymoveforgery
 			 np=40;
              
 			 MB = new BlockMatching (block,DB.getMatrik());
-			 MB.lexicography_sort();
+			 MB.lexicography_sort(iblock*iblock);
 			 np=80;
 	 
 			 MB.forgeryAreaDetection(Int16.Parse(txtNF.Text));
@@ -109,16 +109,16 @@ namespace copymoveforgery
 			 {
 				PG =  new PixelsGrabber();
 
-                System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
-                System.Diagnostics.Trace.WriteLine(">> RGB Pixel");
-                System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
+              //  System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
+              //  System.Diagnostics.Trace.WriteLine(">> RGB Pixel");
+              //  System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
 
 				PG.grabPixel(img,foto);
 
 				PP = new PreProcessing();
-                System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
-                System.Diagnostics.Trace.WriteLine(">> Grayscale");
-                System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
+              //  System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
+              //  System.Diagnostics.Trace.WriteLine(">> Grayscale");
+              //  System.Diagnostics.Trace.WriteLine("---------------------------------------------------------");
                 PP.grayscale(foto);
 
                 //Demo Wavelet

@@ -19,16 +19,15 @@ namespace copymoveforgery
 	            int colomn = foto.getColomn();
 	            for(int i=0;i<row;i++)
 	            {
-
 	             for(int j=0;j<colomn;j++)
 	             {
 		             int pixel = foto.getPixelInput(j,i);
 		             Color c = Color.FromArgb(pixel);
 		             int gray = (c.R+c.G+c.B)/3;
-                     System.Diagnostics.Trace.Write(gray.ToString() + "\t");
+                    // System.Diagnostics.Trace.Write(gray.ToString() + "\t");
 		             foto.setPixelOutput(gray,j,i);
 	              }
-                 System.Diagnostics.Trace.WriteLine("");
+                 // System.Diagnostics.Trace.WriteLine("");
 	            }
             }
 
